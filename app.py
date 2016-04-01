@@ -1,5 +1,5 @@
 from flask import Flask
-from utils.bullshit_util import  get_bullshit_count
+from utils.bullshit_util import get_bullshit_count, get_word_count
 import csv
 import sys
 
@@ -23,6 +23,6 @@ if __name__ == '__main__':
     with open (bullshit_candidate_text, "r") as bsf:
         data = bsf.readlines()
     print(data[0])
-    results = get_bullshit_count(data[0], bullshit_list)
+    results = get_bullshit_count(data, bullshit_list)
     print(results)
-
+    print(get_word_count(data))
